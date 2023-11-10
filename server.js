@@ -3,6 +3,7 @@ import dotenv from 'dotenv';
 import cors from 'cors'
 import { mongoConnection } from "./config/db.js";
 import userRoute from "./routes/userRoute.js"
+import cinemaRoute from "./routes/cinemaRoute.js"
 
 const  app = express();
 dotenv.config()
@@ -16,6 +17,7 @@ app.get("/",(req,res)=>{
 const port = process.env.PORT ;
 
 app.use('/auth',userRoute)
+app.use('/cinema',cinemaRoute)
 
 app.listen(port,()=>{
 console.log(`server running on port ${port}`)
