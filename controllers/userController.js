@@ -25,7 +25,7 @@ export const login = async (req,res)=>{
     }
     // Create and sign a JWT token
     
-    const existingUser= await User.find({email})
+    const existingUser= await User.findOne({email})
     const token = jwt.sign({ userId: existingUser._id }, 'jsonwebsecerct', {
         expiresIn: '1h', // Token expires in 1 hour
     });
