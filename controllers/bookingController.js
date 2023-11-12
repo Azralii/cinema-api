@@ -1,6 +1,6 @@
 
 
-// we have tio make new controller to book a seat
+// i have to make new controller to book a seat
 
 import Cinema from "../models/cinemaModel.js"
 import Booking from '../models/bookingModel.js'
