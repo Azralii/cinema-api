@@ -22,4 +22,4 @@ export const createBooking =async(req,res)=>{
     }
 }
 
-// get booking by film id
+ 

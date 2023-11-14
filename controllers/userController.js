@@ -12,7 +12,7 @@ if(name===""||email==="" || password===''){
 const hashPassword = await bcrypt.hash(password,10)
 const user = await User.create({name,email,password:hashPassword})
 const token = jwt.sign({ userId: user._id }, 'jsonwebsecerct', {
-    expiresIn: '1h', // Token expires in 1 hour
+    expiresIn: '1h', 
 });
 res.json({message:'registration successful',token,user});
 }
@@ -23,11 +23,11 @@ export const login = async (req,res)=>{
         res.json({message:'Each field is required'})
 
     }
-    // Create and sign a JWT token
+    
     
     const existingUser= await User.findOne({email})
     const token = jwt.sign({ userId: existingUser._id }, 'jsonwebsecerct', {
-        expiresIn: '1h', // Token expires in 1 hour
+        expiresIn: '1h', 
     });
   res.json({user:existingUser,token})
 
