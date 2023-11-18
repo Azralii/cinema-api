@@ -1,5 +1,6 @@
 import  express from 'express';
 import { addCinema, getAllCinema, getCinemaById} from '../controllers/cinemaController.js';
+import { authenticateToken } from '../middleware/auth.js';
 const router = express.Router();
 
 
